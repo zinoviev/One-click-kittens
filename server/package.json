@@ -1,0 +1,35 @@
+{
+  "name": "cloud-kitty",
+  "description": "For sure",
+  "version": "0.0.1",
+  "homepage": "https://github.com/zinoviev/chrome-plugin-test",
+  "author": {
+    "name": "ZIgi",
+    "email": "igor@ktlabs.ru",
+    "url": "ktlabs.ru"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zinoviev/chrome-plugin-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zinoviev/chrome-plugin-test/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/zinoviev/chrome-plugin-test/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "main.js",
+  "engines": {
+    "node": ">=0.8"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "~0.3.17"
+  },
+  "keywords": []
+}
