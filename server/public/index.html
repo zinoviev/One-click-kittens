@@ -50,8 +50,15 @@ function getFilename(img) {
 
 </script>
 
+<form id="form2" method="POST" action="http://localhost:3000/">
+	<input type="hidden" name="uploadMethod" value="download">
+    <input type="text" name="url"> <br />
+	<input type="submit" >
+</form>
+
 <form id="form" method="POST" action="http://localhost:3000/">
-	<input id="filename" type="text" name="filename"> <br />
+	<input type="hidden" name="uploadMethod" value="base64">
+    <input id="filename" type="text" name="filename"> <br />
 	<input id="filedata" type="text" name="filedata"> <br />
 	<button id="submit"> Do it </button>
 </form>

@@ -12,8 +12,8 @@ function createPath(ext) {
     return path.join( tmpPath, uuid.v4() + '.' + ext);
 }
 
-function save(data, path, callback) {
-    fs.writeFile(path, data, function(err) {
+function save(buffer, path, callback) {
+    fs.writeFile(path, buffer, function(err) {
         if (err) {
             callback(err);
         }
