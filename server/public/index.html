@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <title></title>
     <style type="text/css">
         .div-text {
@@ -13,10 +14,46 @@
 </head>
 <body>
 
-<form method="POST" action="http://localhost:3000/">
-	<input type="text" name="filename">
-	<input type="text" name="filedata">
-	<input type="submit"> 
+<script type="text/javascript">
+
+$(function(){
+
+    $('#submit').click(function(e){
+        var img = document.getElementById('img');
+        $('#filedata').val( getBase64Image( img));
+        //$('#filename').val( getFilename(img));
+        $('#form').submit();
+        //e.preventDefault();
+    });
+
+});
+
+function getBase64Image(img) {  
+  var canvas = document.createElement("canvas");  
+  canvas.width = img.width;  
+  canvas.height = img.height;  
+  var ctx = canvas.getContext("2d");  
+  ctx.drawImage(img, 0, 0);  
+  var dataURL = canvas.toDataURL("image/jpeg");  
+  // escape data:image prefix
+  return dataURL.replace(/^data:image\/(png|jpeg);base64,/, "");  
+  // or just return dataURL
+  // return dataURL
+}
+
+function getFilename(img) {
+    var src  = img.src;
+    var paths = src.split('/');
+
+    return paths[paths.length-1];
+} 
+
+</script>
+
+<form id="form" method="POST" action="http://localhost:3000/">
+	<input id="filename" type="text" name="filename"> <br />
+	<input id="filedata" type="text" name="filedata"> <br />
+	<button id="submit"> Do it </button>
 </form>
 
 <div class="div-text">This is div</div>
