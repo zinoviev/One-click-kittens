@@ -2,19 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4fafefe-1985-41a9-a6ad-da1573b43233" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/public/uploader.js" />
-      <change type="DELETED" beforePath="C:\Users\ZIgi\Documents\GitHub\chrome-plugin-test\plugin\imageinfo\binaryajax.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ZIgi\Documents\GitHub\chrome-plugin-test\plugin\imageinfo\exif.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ZIgi\Documents\GitHub\chrome-plugin-test\plugin\imageinfo\imageinfo.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ZIgi\Documents\GitHub\chrome-plugin-test\plugin\imageinfo\readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ZIgi\Documents\GitHub\chrome-plugin-test\plugin\info.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ZIgi\Documents\GitHub\chrome-plugin-test\plugin\info.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ZIgi\Documents\GitHub\chrome-plugin-test\plugin\info.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ZIgi\Documents\GitHub\chrome-plugin-test\plugin\sample.js" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/app/config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/app/server.js" />
+      <change type="DELETED" beforePath="C:\Users\ZIgi\Documents\GitHub\chrome-plugin-test\server\lib\server.js" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\ZIgi\Documents\GitHub\chrome-plugin-test\server\lib\files.js" afterPath="$PROJECT_DIR$/server/app/files.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/background.js" afterPath="$PROJECT_DIR$/plugin/background.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/lib/server.js" afterPath="$PROJECT_DIR$/server/lib/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/main.js" afterPath="$PROJECT_DIR$/server/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/public/index.html" afterPath="$PROJECT_DIR$/server/public/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/public/uploader.js" afterPath="$PROJECT_DIR$/server/public/uploader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/test/cloud-kitty_test.js" afterPath="$PROJECT_DIR$/server/test/cloud-kitty_test.js" />
     </list>
     <ignored path="chrome-plugin-test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,16 +36,25 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="55" selection-start="1022" selection-end="1022" vertical-scroll-proportion="-12.807693">
+            <state line="8" column="26" selection-start="237" selection-end="237" vertical-scroll-proportion="-5.230769">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uploader.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/public/uploader.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="46" selection-start="973" selection-end="973" vertical-scroll-proportion="0.64041096">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="server.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/lib/server.js">
+        <entry file="file://$PROJECT_DIR$/server/app/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="23" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0">
+            <state line="0" column="33" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -64,19 +69,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="background.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/plugin/background.js">
+      <file leaf-file-name="config.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/app/config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="35" selection-start="1043" selection-end="1043" vertical-scroll-proportion="0.64041096">
+            <state line="8" column="16" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="uploader.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/public/uploader.js">
+      <file leaf-file-name="background.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plugin/background.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="31" selection-start="719" selection-end="719" vertical-scroll-proportion="0.0">
+            <state line="7" column="28" selection-start="272" selection-end="272" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="files.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/app/files.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="18" selection-start="600" selection-end="600" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -117,13 +131,16 @@
         <option value="$PROJECT_DIR$/server/downloader.js" />
         <option value="$PROJECT_DIR$/server/files.js" />
         <option value="$PROJECT_DIR$/server/package.json" />
-        <option value="$PROJECT_DIR$/server/lib/files.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/server/main.js" />
-        <option value="$PROJECT_DIR$/server/lib/server.js" />
-        <option value="$PROJECT_DIR$/server/public/uploader.js" />
-        <option value="$PROJECT_DIR$/server/public/index.html" />
         <option value="$PROJECT_DIR$/plugin/background.js" />
+        <option value="$PROJECT_DIR$/server/lib/files.js" />
+        <option value="$PROJECT_DIR$/server/public/index.html" />
+        <option value="$PROJECT_DIR$/server/lib/server.js" />
+        <option value="$PROJECT_DIR$/server/main.js" />
+        <option value="$PROJECT_DIR$/server/app/config.js" />
+        <option value="$PROJECT_DIR$/server/app/server.js" />
+        <option value="$PROJECT_DIR$/server/app/files.js" />
+        <option value="$PROJECT_DIR$/server/public/uploader.js" />
       </list>
     </option>
   </component>
@@ -153,7 +170,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -212,65 +228,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chrome-plugin-test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chrome-plugin-test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chrome-plugin-test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chrome-plugin-test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chrome-plugin-test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chrome-plugin-test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Favorites" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method>
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -289,10 +265,12 @@
     <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
     <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
     <option name="FORCE_UPDATE" value="false" />
+    <configuration useDefault="true">C:\Users\ZIgi\AppData\Roaming\Subversion</configuration>
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="a4fafefe-1985-41a9-a6ad-da1573b43233" name="Default" comment="" />
       <created>1361480083545</created>
       <updated>1361480083545</updated>
     </task>
@@ -300,24 +278,24 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41749722" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19594234" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.208756" sideWeight="0.5825028" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
@@ -365,63 +343,56 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/server/test/cloud-kitty_test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="51" selection-start="51" selection-end="51" vertical-scroll-proportion="0.0">
+        <state line="0" column="51" selection-start="51" selection-end="51" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/node_modules/request/tests/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.826484" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/node_modules/request/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="32" selection-start="1545" selection-end="1545" vertical-scroll-proportion="0.1586758" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/node_modules/request/forever.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="77" selection-start="511" selection-end="511" vertical-scroll-proportion="0.3105023" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="5" selection-start="114" selection-end="114" vertical-scroll-proportion="0.32990867" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="35" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin/popup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="23" selection-start="341" selection-end="341" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin/background.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="28" selection-start="272" selection-end="272" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="26" selection-start="237" selection-end="237" vertical-scroll-proportion="-5.230769">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="22" selection-start="807" selection-end="807" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/node_modules/request/tests/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.826484">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/node_modules/request/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="32" selection-start="1545" selection-end="1545" vertical-scroll-proportion="0.1586758">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/node_modules/request/forever.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="77" selection-start="511" selection-end="511" vertical-scroll-proportion="0.3105023">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/files.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="39" selection-start="410" selection-end="410" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="5" selection-start="114" selection-end="114" vertical-scroll-proportion="0.32990867">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plugin/popup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="23" selection-start="341" selection-end="341" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/lib/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="23" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0">
+        <state line="25" column="19" selection-start="620" selection-end="620" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -433,30 +404,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/public/index.html">
+    <entry file="file://$PROJECT_DIR$/server/app/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="55" selection-start="1022" selection-end="1022" vertical-scroll-proportion="-12.807693">
+        <state line="8" column="16" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="33" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/files.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="18" selection-start="600" selection-end="600" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/public/uploader.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="31" selection-start="719" selection-end="719" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plugin/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="35" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plugin/background.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="35" selection-start="1043" selection-end="1043" vertical-scroll-proportion="0.64041096">
+        <state line="33" column="46" selection-start="973" selection-end="973" vertical-scroll-proportion="0.64041096">
           <folding />
         </state>
       </provider>

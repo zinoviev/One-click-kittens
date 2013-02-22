@@ -19,71 +19,25 @@
 
 $(function(){
 
-    $('#ajax').click(function(e){
+    $('#urlBtn').click(function(e){
         var img = document.getElementById('img');
-        var req = new XMLHttpRequest();
-        req.open('POST', 'http://localhost:3000/', true);
-        req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        req.onreadystatechange = function (aEvt) {
-          if (req.readyState == 4) {
-             if(req.status == 200)
-              console.log(req.responseText);
-             else
-              console.log("Error loading page\n");
-          }
-        };
-
-        req.send('uploadMethod=download&url='+img.src);
+        ImageUploaderPlugin.contextMenuHandler({srcUrl : img.src});
     });
 
-//    $('#submit').click(function(e){
-//        var img = document.getElementById('img');
-//        $('#filedata').val( getBase64Image( img));
-//        //$('#filename').val( getFilename(img));
-//        $('#form').submit();
-//        //e.preventDefault();
-//    });
-
+    $('#dataBtn').click(function(e) {
+        var img = document.getElementById('dataImg');
+        ImageUploaderPlugin.contextMenuHandler({srcUrl : img.src});
+    });
 });
-
-function getBase64Image(img) {  
-  var canvas = document.createElement("canvas");  
-  canvas.width = img.width;  
-  canvas.height = img.height;  
-  var ctx = canvas.getContext("2d");  
-  ctx.drawImage(img, 0, 0);  
-  var dataURL = canvas.toDataURL("image/jpeg");  
-  // escape data:image prefix
-  return dataURL.replace(/^data:image\/(png|jpeg);base64,/, "");  
-  // or just return dataURL
-  // return dataURL
-}
-
-function getFilename(img) {
-    var src  = img.src;
-    var paths = src.split('/');
-
-    return paths[paths.length-1];
-} 
 
 </script>
 
-<form id="form2" method="POST" action="http://localhost:3000/">
-	<input type="hidden" name="uploadMethod" value="download">
-    <input type="text" name="url"> <br />
-	<input type="submit" >
-</form>
+<button id="urlBtn"> Upload by url </button> <br />
+<button id="dataBtn"> Upload by data </button> <br />
 
-<form id="form" method="POST" action="http://localhost:3000/">
-	<input type="hidden" name="uploadMethod" value="base64">
-    <input id="filename" type="text" name="filename"> <br />
-	<input id="filedata" type="text" name="filedata"> <br />
-    <button id="submit"> Do it </button>
-</form>
-<button id="ajax"> Do Ajax </button>
-<div class="div-text">This is div</div>
+<img id="dataImg" width="16" height="16" alt="star" src="data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7" />
+<br/>
 <!--http://leprosorium.ru/comments/1151537-->
 <img id="img" src="http://joyreactor.ru/pics/post/picture-60633.jpeg">
-
 </body>
 </html>

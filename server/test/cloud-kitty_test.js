@@ -1,4 +1,4 @@
-var cloud_kitty = require('../lib/cloud-kitty.js');
+var cloud_kitty = require('../app/cloud-kitty.js');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
