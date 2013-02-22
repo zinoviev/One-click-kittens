@@ -14,12 +14,13 @@ app.use(express.bodyParser());
 
 //Routes
 app.get('/', function(req,res) {
+    console.log("GET");
 	res.sendFile('public/index.html');
 });
 
 app.post('/', function(req, res) {
     var uploadMethod = req.body.uploadMethod;
-
+    console.log('POST!');
     if (uploadMethod) {
         if (uploadMethod == 'download') {
 
@@ -29,7 +30,7 @@ app.post('/', function(req, res) {
                         res.status(500).send(err);
                     }
                     else {
-                        res.redirect('/');
+                        res.status(201).send();
                     }
                 });
             }

@@ -9,10 +9,21 @@ function getClickHandler() {
   return function(info, tab) {
 
     // The srcUrl property is only available for image elements.
-    var url = 'info.html#' + info.srcUrl;
+    if (info.srcUrl) {
+        var req = new XMLHttpRequest();
+        req.open('POST', 'http://127.0.0.1:3000/', true);
+        req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        req.onreadystatechange = function (aEvt) {
+          if (req.readyState == 4) {
+             if(req.status == 200)
+              console.log(req.responseText);
+             else
+              console.log("Error loading page\n");
+          }
+        };
 
-    // Create a new window to the info page.
-    chrome.windows.create({ url: url, width: 520, height: 660 });
+        req.send('uploadMethod=download&url='+info.srcUrl);
+    }
   };
 };
 
@@ -20,7 +31,7 @@ function getClickHandler() {
  * Create a context menu which will only show up for images.
  */
 chrome.contextMenus.create({
-  "title" : "Get image info",
+  "title" : "Скопировать картинку",
   "type" : "normal",
   "contexts" : ["image"],
   "onclick" : getClickHandler()
