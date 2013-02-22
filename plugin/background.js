@@ -44,7 +44,9 @@ window.ImageUploaderPlugin = {
             }
         };
 
-        req.send('uploadMethod=download&url=' + imageUrl);
+        ImageUploaderPlugin.queryTitle(function(response) {
+            req.send('name=' + response.title +'&uploadMethod=download&url=' + imageUrl);
+        });
     },
 
     sendUploadBase64Request : function(extension, data) {
@@ -59,7 +61,11 @@ window.ImageUploaderPlugin = {
                     ImageUploaderPlugin.serverFailure(req);
             }
         };
-        req.send('uploadMethod=base64&data=' + data+'&extension='+extension);
+
+        ImageUploaderPlugin.queryTitle(function(response) {
+            req.send('name=' + response.title +'&uploadMethod=base64&data=' + data+'&extension='+extension);
+        });
+
     },
 
     serverSuccess : function(req) {
@@ -83,6 +89,14 @@ window.ImageUploaderPlugin = {
                 message : 'UnknownError'
             });
         }
+    },
+
+    queryTitle : function(callback) {
+        chrome.tabs.getSelected(null, function(tab) {
+            chrome.tabs.sendMessage(tab.id, { message : 'GetName'}, function(response) {
+                callback(response);
+            });
+        });
     },
 
     postMessage : function(message) {

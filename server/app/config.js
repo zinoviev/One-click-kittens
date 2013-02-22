@@ -6,7 +6,9 @@ var config = {
     //here will me images saved on disk
     imgDir : path.join(__dirname,'../tmp-images'),
     //Url returned to client
-    imgPath : '/img'
+    imgPath : '/img',
+    //mongo
+    mongoUrl : 'mongodb://localhost/images'
 };
 
 module.exports = config;

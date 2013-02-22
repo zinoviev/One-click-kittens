@@ -3,7 +3,9 @@ var express = require('express'),
 	path = require('path'),
 	app = express(),
     config = require('./config'),
-    files = require('./files');
+    files = require('./files'),
+    mongoose = require('mongoose'),
+    Image = require('./models/image');
 
 //Serve public
 app.use(express.static('public'));
@@ -17,6 +19,18 @@ app.get('/', function(req,res) {
 	res.sendFile('public/index.html');
 });
 
+app.get('/Images', function(req, res) {
+    var result = 'What we have:<br/>';
+
+    Image.find(function(err, images) {
+        images.forEach(function(el, index){
+            result += '<a href="' + el.url + '">' + el.name + "</a><br/>"
+        });
+
+        res.send(result);
+    });
+})
+
 app.post('/', function(req, res) {
     var uploadMethod = req.body ? req.body.uploadMethod : null,
         uploadCallback = function(err, filename) {
@@ -27,12 +41,22 @@ app.post('/', function(req, res) {
                 });
             }
             else {
-                res.status(201).send({
-                    success : true,
+
+                var imageModel = new Image({
+                    name : imageName,
                     url : config.baseUrl + config.imgPath + '/' + filename
+                });
+
+                imageModel.save(function(err) {
+                        res.status(201).send({
+                        success : true,
+                        url : config.baseUrl + config.imgPath + '/' + filename
+                    });
                 });
             }
         };
+
+    var imageName = req.body.name ? req.body.name : 'Unknown image';
 
     if (uploadMethod == 'download' && req.body.url) {
             files.download(req.body.url, uploadCallback);
@@ -58,6 +82,8 @@ app.use(function(req, res, next){
   res.send(404, 'Sorry cant find that!');
 });
 
+//Init mongo
+mongoose.connect(config.mongoUrl);
 app.listen(3000);
 
 module.exports = app;

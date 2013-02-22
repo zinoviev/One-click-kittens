@@ -12,7 +12,7 @@ window.KT.ImageUploaderNotifier = {
         var message = request.message;
         if (message) {
             if (KT.ImageUploaderNotifier.hasOwnProperty('on'+message)) {
-                KT.ImageUploaderNotifier['on'+message].call(this,request.data);
+                KT.ImageUploaderNotifier['on'+message].call(this,request.data,sendResponse);
             }
         }
     },
@@ -25,6 +25,12 @@ window.KT.ImageUploaderNotifier = {
         $('.uploader-popup > .closeBtn').click(function(e) {
             $(e.target).parent().hide();
         })
+    },
+
+    onGetName : function(data, sendResponse) {
+        sendResponse({
+            title : document.title
+        });
     },
 
     onUpload : function(data) {
