@@ -10,6 +10,23 @@
             border: 1px solid;
             margin: 5px;
         }
+
+
+        .uploader-popup {
+            position : absolute;
+            top : 1px;
+            right: 1px;
+            width : 300px;
+            height : 200px;
+            border: 1px solid;
+        }
+
+        .uploader-popup > .closeBtn {
+            position: absolute;
+            top : 1px;
+            right : 2px;
+        }
+
     </style>
 </head>
 <body>
@@ -28,12 +45,28 @@ $(function(){
         var img = document.getElementById('dataImg');
         ImageUploaderPlugin.contextMenuHandler({srcUrl : img.src});
     });
+
+    $('#showPopupBtn').click(function(e){
+        $('#infoPopup').show();
+    });
+
+    $('.uploader-popup > .closeBtn').click(function(e) {
+        $(e.target).parent().hide();
+    })
 });
 
 </script>
 
+<div id="infoPopup" class="uploader-popup">
+    <div id="infoPopupCloseBtn" class="closeBtn">
+        X
+    </div>
+
+</div>
+
 <button id="urlBtn"> Upload by url </button> <br />
 <button id="dataBtn"> Upload by data </button> <br />
+<button id="showPopupBtn">Show popup</button>
 
 <img id="dataImg" width="16" height="16" alt="star" src="data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7" />
 <br/>

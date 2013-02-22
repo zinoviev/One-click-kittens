@@ -1,0 +1,16 @@
+.uploader-popup {
+    position : fixed;
+    top : 1px;
+    right: 1px;
+    width : 300px;
+    height : 200px;
+    border: 1px solid;
+    background-color: #b8860b;
+    z-index: 9999;
+}
+
+.uploader-popup > .closeBtn {
+    position: absolute;
+    top : 1px;
+    right : 2px;
+}

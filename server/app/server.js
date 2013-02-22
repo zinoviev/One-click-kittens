@@ -29,7 +29,7 @@ app.post('/', function(req, res) {
             else {
                 res.status(201).send({
                     success : true,
-                    url : config.imgPath + '/' + filename
+                    url : config.baseUrl + config.imgPath + '/' + filename
                 });
             }
         };
