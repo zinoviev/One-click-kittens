@@ -14,6 +14,3 @@ tmp-images
 
 node_modules
 npm-debug.log
-
-.idea
-atlassian-ide-plugin.xml
