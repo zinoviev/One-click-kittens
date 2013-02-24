@@ -21,20 +21,10 @@ app.set('view engine', 'html');
 app.use(express.bodyParser());
 
 //Routes
-app.get('/test', function(req,res) {
-	//res.sendfile('public/index.html');
-    res.render('index.html');
-});
 
 app.get('/', function(req, res) {
-    var result = 'What we have:<br/>';
-
     Image.find(function(err, images) {
-        images.forEach(function(el, index){
-            result += '<a href="' + el.url + '">' + el.name + "</a><br/>"
-        });
-
-        res.send(result);
+        res.render('index.html', { images : images});
     });
 })
 

@@ -10,6 +10,9 @@
     <meta name="author" content="">
     <!-- Le styles -->
     <link href="public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/css/prettyPhoto.css" rel="stylesheet">
+    <link href="public/css/app.css" rel="stylesheet">
+
     <style>
       body { padding-top: 60px; /* 60px to make the container go all the way
       to the bottom of the topbar */ }
@@ -25,67 +28,29 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="span2">
-        	<img src="http://i.imgur.com/Asf2J.jpg" style=" width: 200px; height: 261px;">
-        </div>
-        <div class="span2">
-          <img src="http://i.imgur.com/Asf2J.jpg" style=" width: 200px; height: 261px;">
-        </div>
-        <div class="span2">
-        	<img src="http://i.imgur.com/Asf2J.jpg" style=" width: 200px; height: 261px;">
-        </div>
-        <div class="span2">
-        	<img src="http://i.imgur.com/Asf2J.jpg" style=" width: 200px; height: 261px;">
-        </div>
-        <div class="span2">
-        	<img src="http://i.imgur.com/Asf2J.jpg" style=" width: 200px; height: 261px;">
-        </div>
-        <div class="span2">
-        	<img src="http://i.imgur.com/Asf2J.jpg" style=" width: 200px; height: 261px;">
-        </div>
-      </div>
+        {{#images}}
+            <a href="{{url}}" rel="gallery[main]" title="{{name}}"><img class="preview-image" src="{{url}}" /></a>
+        {{/images}}
+
       <hr>
-      <div class="pagination">
-        <ul>
-          <li class="">
-            <a href="#">
-              Prev
-            </a>
-          </li>
-          <li class="">
-            <a href="#">
-              Next
-            </a>
-          </li>
-          <li class="">
-            <a href="#">
-              2
-            </a>
-          </li>
-          <li class="">
-            <a href="#">
-              3
-            </a>
-          </li>
-          <li class="">
-            <a href="#">
-              n
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div>
-        © Company 2012
-      </div>
+      <a href="/public/plugin.crx">Скачать плагин для Хрома(для установки нужно перетащить его на панель с плагинами)</a>
     </div>
 
     <style>
       
     </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
-    </script>
-    <script src="public/js/bootstrap.js">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="public/js/jquery.prettyPhoto.js"></script>
+    <script src="public/js/bootstrap.min.js"></script>
+    <script src="public/js/app.js"></script>
+    <script type="text/javascript">
+        $(function() {
+		    $("a[rel^='gallery']").prettyPhoto({
+                theme : 'dark_square',
+                
+                social_tools:false
+            });
+        });
     </script>
   </body>
 </html>
