@@ -2,24 +2,31 @@ var express = require('express'),
 	fs = require('fs'),
 	path = require('path'),
 	app = express(),
+    cons = require('consolidate'),
     config = require('./config'),
     files = require('./files'),
     mongoose = require('mongoose'),
     Image = require('./models/image');
 
 //Serve public
-app.use(express.static('public'));
+app.use('/public',express.static(path.join(__dirname,'../public')));
 app.use(config.imgPath, express.static( config.imgDir ));
+
+//Setup views
+app.engine('html', cons.handlebars);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
 
 //Middleware
 app.use(express.bodyParser());
 
 //Routes
-app.get('/', function(req,res) {
-	res.sendFile('public/index.html');
+app.get('/test', function(req,res) {
+	//res.sendfile('public/index.html');
+    res.render('index.html');
 });
 
-app.get('/Images', function(req, res) {
+app.get('/', function(req, res) {
     var result = 'What we have:<br/>';
 
     Image.find(function(err, images) {

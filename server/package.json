@@ -33,7 +33,9 @@
     "mime" :"1.x",
     "request" : "2.x",
     "node-uuid" : "1.x",
-    "mongoose" : "3.5.x"
+    "mongoose" : "3.5.x",
+    "consolidate" : "0.8.x",
+    "handlebars" : "1.0.x"
   },
   "devDependencies": {
     "grunt": "~0.3.17"
