@@ -4,9 +4,8 @@ var express = require('express'),
 	app = express(),
     cons = require('consolidate'),
     config = require('./config'),
-    files = require('./files'),
     mongoose = require('mongoose'),
-    Image = require('./models/image');
+    boot = require('./lib/boot');
 
 //Serve public
 app.use('/public',express.static(path.join(__dirname,'../public')));
@@ -17,57 +16,11 @@ app.engine('html', cons.handlebars);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
+//Controllers
+boot.loadControllers(path.join(__dirname, '/controllers'),app);
+
 //Middleware
 app.use(express.bodyParser());
-
-//Routes
-
-app.get('/', function(req, res) {
-    Image.find(function(err, images) {
-        res.render('index.html', { images : images});
-    });
-})
-
-app.post('/', function(req, res) {
-    var uploadMethod = req.body ? req.body.uploadMethod : null,
-        uploadCallback = function(err, filename) {
-            if (err) {
-                res.status(500).send({
-                    success : false,
-                    error : err
-                });
-            }
-            else {
-
-                var imageModel = new Image({
-                    name : imageName,
-                    url : config.baseUrl + config.imgPath + '/' + filename
-                });
-
-                imageModel.save(function(err) {
-                        res.status(201).send({
-                        success : true,
-                        url : config.baseUrl + config.imgPath + '/' + filename
-                    });
-                });
-            }
-        };
-
-    var imageName = req.body.name ? req.body.name : 'Unknown image';
-
-    if (uploadMethod == 'download' && req.body.url) {
-            files.download(req.body.url, uploadCallback);
-    }
-    else if (uploadMethod == 'base64' && req.body.data
-        && req.body.extension) {
-        var buf = new Buffer(req.body.data, 'base64');
-        files.save(buf, req.body.extension, uploadCallback);
-    }
-    else {
-        res.status(500).send('No required params')
-    }
-
-});
 
 //Errors
 app.use(function(err, req, res, next){

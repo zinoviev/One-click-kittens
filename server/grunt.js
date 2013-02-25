@@ -4,7 +4,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: '<json:package.json>',
     test: {
-      files: ['test/**/*.js']
+      files: ['test/**/*_test.js']
     },
     lint: {
       files: ['grunt.js', 'lib/**/*.js', 'test/**/*.js']
@@ -25,7 +25,8 @@ module.exports = function(grunt) {
         undef: true,
         boss: true,
         eqnull: true,
-        node: true
+        node: true,
+        strict: false
       },
       globals: {
         exports: true
