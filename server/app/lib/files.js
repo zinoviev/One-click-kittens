@@ -4,9 +4,11 @@ var fs = require('fs'),
     request = require('request'),
     uuid = require('node-uuid'),
     path = require('path'),
-    config = require('./config');
+    gm = require('gm'),
+    config = require('../config.js');
 
-var allowedFiles = ['png', 'jpg', 'jpeg', 'gif', 'jpe'];
+var allowedFiles = ['png', 'jpg', 'jpeg', 'gif', 'jpe'],
+    THUMB_SIZE=200;
 
 function createPath(ext) {
     var filename = uuid.v4() + '.' + ext;
@@ -14,6 +16,18 @@ function createPath(ext) {
         path: path.join( config.imgDir , filename),
         filename : filename
     };
+}
+
+function createThumb(buffer, ext, callback) {
+    var path = createPath(ext);
+    gm(buffer).thumb(THUMB_SIZE, THUMB_SIZE, 70, function(err){
+        if (err) {
+            callback(err);
+        }
+        else {
+            callback(err, path);
+        }
+    })
 }
 
 function save(buffer, extension, callback) {
@@ -61,8 +75,9 @@ function download(url, callback) {
             callback(error);
         }
     });
-};
+}
 
 module.exports.save = save;
 module.exports.download = download;
 module.exports.createPath = createPath;
+module.exports.createThumb = createThumb;

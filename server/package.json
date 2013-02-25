@@ -35,7 +35,8 @@
     "node-uuid" : "1.x",
     "mongoose" : "3.5.x",
     "consolidate" : "0.8.x",
-    "handlebars" : "1.0.x"
+    "handlebars" : "1.0.x",
+    "gm" : "1.8.x"
   },
   "devDependencies": {
     "grunt": "~0.3.17",

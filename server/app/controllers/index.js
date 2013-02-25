@@ -1,6 +1,6 @@
 var Image = require('../models/image'),
     config = require('../config'),
-    files = require('../files');
+    files = require('../lib/files.js');
 
 var controller = {
     route : '/',
@@ -21,7 +21,6 @@ var controller = {
                     });
                 }
                 else {
-
                     var imageModel = new Image({
                         name : imageName,
                         url : config.baseUrl + config.imgPath + '/' + filename
