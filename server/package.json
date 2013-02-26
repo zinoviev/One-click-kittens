@@ -1,7 +1,7 @@
 {
   "name": "cloud-kitty",
   "description": "For sure",
-  "version": "0.0.1",
+  "version": "0.0.1-3",
   "homepage": "https://github.com/zinoviev/chrome-plugin-test",
   "author": {
     "name": "ZIgi",
@@ -26,7 +26,8 @@
     "node": ">=0.8"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "start": "main.js"
   },
   "dependencies" : {
     "express": "3.x",
@@ -36,11 +37,13 @@
     "mongoose" : "3.5.x",
     "consolidate" : "0.8.x",
     "handlebars" : "1.0.x",
-    "gm" : "1.8.x"
+    "gm" : "1.8.x",
+    "async" : "~0.2.2"
   },
   "devDependencies": {
     "grunt": "~0.3.17",
     "supertest": "~0.5.1"
   },
+  "subdomain": "zigi.kity",
   "keywords": []
 }

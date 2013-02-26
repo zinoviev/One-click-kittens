@@ -16,11 +16,11 @@ app.engine('html', cons.handlebars);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
-//Controllers
-boot.loadControllers(path.join(__dirname, '/controllers'),app);
-
 //Middleware
 app.use(express.bodyParser());
+
+//Controllers
+boot.loadControllers(path.join(__dirname, '/controllers'),app);
 
 //Errors
 app.use(function(err, req, res, next){

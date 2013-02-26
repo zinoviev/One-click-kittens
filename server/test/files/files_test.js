@@ -14,10 +14,10 @@ exports['Images processing test'] = {
     
     'Create thumb': function(test) {
         var buf = fs.readFileSync(path.join(dir,'big-picture.jpeg'));
-//        files.createThumb('jpeg', buf, function(err, path){
-//            test.ifError(err);
-//            test.notEqual(path, null);
-//            test.done();
-//        });
+        files.saveThumb(buf, path.join(dir,'image-thumb.jpeg'), function(err, path){
+            test.ifError(err);
+            test.notEqual(path, null);
+            test.done();
+        });
     }
 };

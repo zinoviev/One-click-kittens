@@ -1,6 +1,45 @@
 var Image = require('../models/image'),
     config = require('../config'),
+    async = require('async'),
     files = require('../lib/files.js');
+
+function sendResponse(res, err, model) {
+    if (err) {
+        res.status(500).send({
+            success : false,
+            error : err
+        });
+    }
+    res.status(201).send({
+        success : true,
+        url : model.url
+    });
+}
+
+function processImage(imageBuf, model, callback) {
+    //Create random names and setup paths
+    model.initRandoms();
+    async.waterfall([
+        function saveToDisk(cb) {
+            files.save(imageBuf, model.fullPath, function(err) {
+                cb(err);
+            })
+        },
+        function createThumb(cb) {
+            files.createThumb(imageBuf, model.thumbPath, function(err) {
+                cb(err);
+            })
+        },
+        function createModel(cb) {
+            model.save(function(err) {
+                cb(err);
+            })
+        }
+    ], function(err) {
+        callback(err, model);
+    })
+}
+
 
 var controller = {
     route : '/',
@@ -13,37 +52,32 @@ var controller = {
 
     post : function(req, res) {
         var uploadMethod = req.body ? req.body.uploadMethod : null,
-            uploadCallback = function(err, filename) {
-                if (err) {
-                    res.status(500).send({
-                        success : false,
-                        error : err
-                    });
-                }
-                else {
-                    var imageModel = new Image({
-                        name : imageName,
-                        url : config.baseUrl + config.imgPath + '/' + filename
-                    });
+            imageName = req.body.name ? req.body.name : 'Unknown image',
+            url = req.body.url,
+            data = req.body.data,
+            extension = req.body.extension,
+            buf = null,
+            imageModel = new Image({
+                name : imageName
+            });
 
-                    imageModel.save(function(err) {
-                        res.status(201).send({
-                            success : true,
-                            url : config.baseUrl + config.imgPath + '/' + filename
-                        });
+
+        if (uploadMethod == 'download' && url) {
+            files.download(url, function onDownload(err, buf, ext) {
+                    imageModel.type = ext;
+                    processImage(buf, imageModel, function(err, model) {
+                        sendResponse(res, err, model);
                     });
-                }
-            };
-
-        var imageName = req.body.name ? req.body.name : 'Unknown image';
-
-        if (uploadMethod == 'download' && req.body.url) {
-            files.download(req.body.url, uploadCallback);
+            });
         }
-        else if (uploadMethod == 'base64' && req.body.data
-            && req.body.extension) {
-            var buf = new Buffer(req.body.data, 'base64');
-            files.save(buf, req.body.extension, uploadCallback);
+        else if (uploadMethod == 'base64' && data && extension) {
+            buf = new Buffer(data, 'base64');
+            imageModel.type = extension;
+
+            processImage(buf, imageModel, function(err, model) {
+                sendResponse(res, err, model);
+            });
+
         }
         else {
             res.status(500).send('No required params')
