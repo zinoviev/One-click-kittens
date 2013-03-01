@@ -3,7 +3,6 @@ var fs = require('fs'),
 
 function loadControllers(dir, app) {
     fs.readdirSync(dir).forEach(function(name){
-        debugger;
         var obj = require(path.join(dir,name)),
             predefinedProps = ['route'];
 

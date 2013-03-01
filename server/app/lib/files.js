@@ -11,6 +11,7 @@ var allowedFiles = ['png', 'jpg', 'jpeg', 'gif', 'jpe'],
     THUMB_SIZE=200;
 
 function saveThumb(buffer, path, callback) {
+    //TODO add check for gifs
     gm(buffer).thumb(THUMB_SIZE, THUMB_SIZE, path, 100, function(err){
         callback(err,path);
     })

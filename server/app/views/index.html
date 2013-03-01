@@ -28,6 +28,13 @@
   </head>
   <body>
     <div class="container">
+        <div>Привет, {{user.name}}</div>
+        
+        <a class="btn btn-info" href="/auth/twitter">
+        Вход через Twitter
+        </a>
+    </div>
+    <div class="container">
         {{#images}}
             <a href="{{url}}" rel="gallery[main]" title="{{name}}"><img class="preview-image" src="{{thumbUrl}}" /></a>
         {{/images}}

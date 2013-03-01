@@ -1,5 +1,5 @@
 window.ImageUploaderPlugin = {
-    server : 'http://127.0.0.1:3000',
+    server : 'http://127.0.0.1',
 
     //TODO add check not download same image same time
     imagesInProgress : {

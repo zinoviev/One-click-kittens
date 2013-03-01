@@ -1,4 +1,5 @@
 var Image = require('../models/image'),
+    User = require('../models/user'),
     config = require('../config'),
     async = require('async'),
     files = require('../lib/files.js');
@@ -46,7 +47,7 @@ var controller = {
 
     get : function(req, res) {
         Image.find(function(err, images) {
-            res.render('index.html', { images : images});
+            res.render('index.html', { user : req.user, images : images});
         });
     },
 
