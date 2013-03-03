@@ -5,6 +5,7 @@ var express = require('express'),
     cons = require('consolidate'),
     config = require('./config'),
     mongoose = require('mongoose'),
+    MongoStore = require('connect-mongo')(express);
     everyauth = require('everyauth'),
     auth = require('./lib/auth'),
     boot = require('./lib/boot');
@@ -21,8 +22,13 @@ app.set('view engine', 'html');
 //Middleware
 app.use(express.bodyParser());
 app.use(express.cookieParser());
-//TODO add betta session support
-app.use(express.session({ secret : 'whoooa'}));
+app.use(express.session({
+    secret : 'whoooa',
+    expires : new Date(2038,0,0),
+    maxAge : 1000 * 60 * 60 * 24 * 365 ,
+    store: new MongoStore({
+      url: config.mongoUrl
+    })}));
 app.use(everyauth.middleware());
 
 //Controllers

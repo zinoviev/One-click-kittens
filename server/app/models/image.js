@@ -8,6 +8,7 @@ var imageSchema = mongoose.Schema({
     filename : String,
     thumbname : String,
     type : String,
+    userId : mongoose.Schema.Types.ObjectId,
     fullPath : String,
     thumbPath : String
 });

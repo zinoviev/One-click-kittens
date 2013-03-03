@@ -27,9 +27,17 @@ function processImage(imageBuf, model, callback) {
             })
         },
         function createThumb(cb) {
-            files.createThumb(imageBuf, model.thumbPath, function(err) {
-                cb(err);
-            })
+            //TODO hack
+            if (model.type != 'gif') {
+                files.createThumb(imageBuf, model.thumbPath, function(err) {
+                    cb(err);
+                })
+            }
+            else {
+                model.thumbname = model.filename;
+                model.thumbPath = model.fullPath;
+                cb(null);
+            }
         },
         function createModel(cb) {
             model.save(function(err) {
@@ -46,9 +54,25 @@ var controller = {
     route : '/',
 
     get : function(req, res) {
-        Image.find().limit(30).exec(function(err, images) {
-            res.render('index.html', { user : req.user, images : images});
+        async.parallel({
+            images : function(cb) {
+                Image.find().limit(30).exec(function(err, images) {
+                    cb(err, images);
+                });
+            },
+            users : function fetchUsers(cb) {
+                User.find(function(err, users) {
+                    cb(err, users);
+                })
+            }
+        }, function(err, result) {
+            if (err) {
+                throw err;
+            }
+            
+            res.render('index.html', { user : req.user, users : result.users, images : result.images});
         });
+
     },
 
     post : function(req, res) {

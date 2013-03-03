@@ -9,9 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Le styles -->
-    <link href="public/css/bootstrap.min.css" rel="stylesheet">
-    <link href="public/css/prettyPhoto.css" rel="stylesheet">
-    <link href="public/css/app.css" rel="stylesheet">
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/public/css/app.css" rel="stylesheet">
 
     <style>
       body { padding-top: 60px; /* 60px to make the container go all the way
@@ -28,25 +28,8 @@
   </head>
   <body>
     <div class="container">
-        {{#if user}}
-            Привет, {{user.name}}
-            <a class="btn btn-info" href="/logout">
-               Выход
-            </a>
-        {{else}}
-            <a class="btn btn-info" href="/auth/twitter">
-                Вход через Twitter
-            </a>
-        {{/if}}
-        <hr>
-        <h2>У нас уже зарегистрировались: </h2>
-        {{#users}}
-            <span> <a href="/users/{{name}}">{{fullName}}</a> </span>
-        {{/users}}
-    </div>
-    <div class="container">
-        <hr>
-        <h2>А вот последние 30 картинок</h2>
+        <a href="/">Главная</a>
+        <h2>Картинки от {{username}}</h2>
         {{#images}}
             <a href="{{url}}" rel="gallery[main]" title="{{name}}"><img class="preview-image" src="{{thumbUrl}}" /></a>
         {{/images}}

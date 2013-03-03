@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var userSchema = mongoose.Schema({
     name : String,
-    userId : mongoose.Schema.Types.ObjectId,
+    fullName : String,
     auth : {
         twitter : {
             id : Number,
