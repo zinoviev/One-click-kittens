@@ -1,5 +1,6 @@
 window.ImageUploaderPlugin = {
-    server : 'http://cl.ug',
+    //server : 'http://cl.ug',
+    server : 'http://zigi.kity.jit.su',
 
     //TODO add check not download same image same time
     imagesInProgress : {
