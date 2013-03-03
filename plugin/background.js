@@ -1,5 +1,5 @@
 window.ImageUploaderPlugin = {
-    server : 'http://127.0.0.1',
+    server : 'http://cl.ug',
 
     //TODO add check not download same image same time
     imagesInProgress : {
@@ -82,6 +82,14 @@ window.ImageUploaderPlugin = {
                 message : 'ServerError',
                 data : JSON.parse(req.responseText)
             });
+        }
+        else if (req.status == 401) {
+            ImageUploaderPlugin.postMessage({
+                message : 'Unauthorized',
+                data : {
+                    serverUrl : window.ImageUploaderPlugin.server
+                }
+            })
         }
         else {
             //Really wrong

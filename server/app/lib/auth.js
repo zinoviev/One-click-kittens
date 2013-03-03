@@ -5,6 +5,7 @@ everyauth.everymodule.findUserById( function (userId, callback) {
         User.findById(userId, callback);
 })
 
+//TODO don't store twitter meta in session
 everyauth.twitter
   //.entryPath('/auth/twitter'),
   //.callbackPath('/auth/twitter/callback'),

@@ -17,9 +17,9 @@ window.KT.ImageUploaderNotifier = {
         }
     },
 
-    initWindow : function(text) {
+    initWindow : function(message, link) {
         $('body').append(
-            $( KT.ImageUploaderNotifier.popupTpl( {text : text} ) )
+            $( KT.ImageUploaderNotifier.popupTpl( {message : message, link : link} ) )
         );
 
         $('.uploader-popup > .closeBtn').click(function(e) {
@@ -35,10 +35,14 @@ window.KT.ImageUploaderNotifier = {
 
     onUpload : function(data) {
         if (data.success) {
-           KT.ImageUploaderNotifier.initWindow(data.url)
+           KT.ImageUploaderNotifier.initWindow('Мы загрузили картинку ',data.url)
         }
     },
 
+    onUnauthorized : function(data) {
+        KT.ImageUploaderNotifier.initWindow('Мы не знаем кто вы такой. Пожалуйста, залогинтесь в нашем чудесном сервисе',
+            data.serverUrl);
+    },
     onServerError : function(data) {
 
     },
@@ -48,7 +52,7 @@ window.KT.ImageUploaderNotifier = {
                     '<div id="infoPopupCloseBtn" class="closeBtn">' +
                         'X' +
                     '</div>' +
-                    '<a href=" <%= text %>" target="_blank"><%= text %></a>  ' +
+                    '<a href=" <%= link %>" target="_blank"><%= message %></a>  ' +
                 '</div>')
 
 }

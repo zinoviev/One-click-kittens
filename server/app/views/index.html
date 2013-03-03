@@ -28,11 +28,17 @@
   </head>
   <body>
     <div class="container">
-        <div>Привет, {{user.name}}</div>
-        
-        <a class="btn btn-info" href="/auth/twitter">
-        Вход через Twitter
-        </a>
+
+        {{#if user}}
+            <div>Привет, {{user.name}}</div>
+            <a class="btn btn-info" href="/logout">
+               Выход
+            </a>
+        {{else}}
+            <a class="btn btn-info" href="/auth/twitter">
+                Вход через Twitter
+            </a>
+        {{/if}}
     </div>
     <div class="container">
         {{#images}}

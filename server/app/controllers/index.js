@@ -46,7 +46,7 @@ var controller = {
     route : '/',
 
     get : function(req, res) {
-        Image.find(function(err, images) {
+        Image.find().limit(30).exec(function(err, images) {
             res.render('index.html', { user : req.user, images : images});
         });
     },
@@ -58,9 +58,18 @@ var controller = {
             data = req.body.data,
             extension = req.body.extension,
             buf = null,
+            user = req.user,
             imageModel = new Image({
                 name : imageName
             });
+
+        if (!user) {
+            res.status(401).send();
+            return;
+        }
+        else {
+            imageModel.userId = user.id;
+        }
 
 
         if (uploadMethod == 'download' && url) {
